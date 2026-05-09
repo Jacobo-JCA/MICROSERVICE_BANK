@@ -78,9 +78,9 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     private BigDecimal calculateNewBalance(BigDecimal currentBalance, TransactionRequest request) {
-        BigDecimal newBalance = request.transactionType() == TransactionType.DEPOSIT
-                ? currentBalance.add(request.amount())
-                : currentBalance.subtract(request.amount());
+        BigDecimal newBalance = request.transactionType() == TransactionType.WITHDRAWAL
+                ? currentBalance.subtract(request.amount())
+                : currentBalance.add(request.amount());
 
         if (newBalance.compareTo(BigDecimal.ZERO) < 0) {
             throw new InsufficientBalanceException("Saldo no disponible");

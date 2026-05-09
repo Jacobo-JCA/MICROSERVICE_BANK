@@ -23,21 +23,23 @@ public class TransactionMapper {
     }
 
     public static TransactionReportResponse toReportResponse(Transaction transaction, String clientName) {
-        BigDecimal initialBalance = transaction.getBalance().subtract(transaction.getAmount());
-        String movement = transaction.getTransactionType() == TransactionType.DEPOSIT
-                ? "+" + transaction.getAmount()
-                : "-" + transaction.getAmount();
-        return new TransactionReportResponse(
-                transaction.getDate(),
-                clientName,
-                transaction.getAccount().getAccountNumber(),
-                transaction.getAccount().getTypeAccount().name(),
-                initialBalance,
-                transaction.getAccount().getStatus(),
-                movement,
-                transaction.getBalance()
-        );
-    }
+    BigDecimal initialBalance = transaction.getTransactionType() == TransactionType.WITHDRAWAL
+            ? transaction.getBalance().add(transaction.getAmount())
+            : transaction.getBalance().subtract(transaction.getAmount());
+    String movement = transaction.getTransactionType() == TransactionType.DEPOSIT
+            ? "+" + transaction.getAmount()
+            : "-" + transaction.getAmount();
+    return new TransactionReportResponse(
+            transaction.getDate(),
+            clientName,
+            transaction.getAccount().getAccountNumber(),
+            transaction.getAccount().getTypeAccount().name(),
+            initialBalance,
+            transaction.getAccount().getStatus(),
+            movement,
+            transaction.getBalance()
+    );
+}
 
     public static TransactionResponse toResponse(Transaction transaction, BigDecimal initialBalance) {
         String movement = transaction.getTransactionType() == TransactionType.DEPOSIT

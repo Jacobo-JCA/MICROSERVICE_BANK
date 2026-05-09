@@ -16,7 +16,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"accountType\": \"CHECKING\",\r\n  \"initialBalance\": 1000.00\r\n}\r\n\r\n",
+              "raw": "{\r\n  \"accountType\": \"SAVINGS\",\r\n  \"initialBalance\": 1000.00\r\n}\r\n\r\n",
               "options": {
                 "raw": {
                   "language": "json"
@@ -53,7 +53,7 @@
               }
             },
             "url": {
-              "raw": "localhost:8082/v1/transactions/3",
+              "raw": "localhost:8082/v1/transactions/1",
               "host": [
                 "localhost"
               ],
@@ -61,16 +61,19 @@
               "path": [
                 "v1",
                 "transactions",
-                "3"
+                "1"
               ]
             }
           },
           "response": []
         },
         {
-          "name": "CreateTransaction Copy",
+          "name": "GetTransactionByDate",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
-            "method": "POST",
+            "method": "GET",
             "header": [],
             "body": {
               "mode": "raw",
@@ -82,7 +85,7 @@
               }
             },
             "url": {
-              "raw": "localhost:8082/v1/transactions/3",
+              "raw": "localhost:8082/v1/transactions/details?clientId=1&startDate=2026-05-09&endDate=2026-05-09",
               "host": [
                 "localhost"
               ],
@@ -90,7 +93,21 @@
               "path": [
                 "v1",
                 "transactions",
-                "3"
+                "details"
+              ],
+              "query": [
+                {
+                  "key": "clientId",
+                  "value": "1"
+                },
+                {
+                  "key": "startDate",
+                  "value": "2026-05-09"
+                },
+                {
+                  "key": "endDate",
+                  "value": "2026-05-09"
+                }
               ]
             }
           },
@@ -124,7 +141,7 @@
           "response": []
         },
         {
-          "name": "GetAccounts Copy",
+          "name": "GetReport",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -136,15 +153,28 @@
               "raw": "{\r\n  \"transactionType\": \"WITHDRAWAL\",\r\n  \"amount\": 750.00\r\n}\r\n\r\n\r\n"
             },
             "url": {
-              "raw": "localhost:8082/v1/accounts/1",
+              "raw": "localhost:8082/v1/reports?clientId=1&startDate=2026-05-09&endDate=2026-05-09",
               "host": [
                 "localhost"
               ],
               "port": "8082",
               "path": [
                 "v1",
-                "accounts",
-                "1"
+                "reports"
+              ],
+              "query": [
+                {
+                  "key": "clientId",
+                  "value": "1"
+                },
+                {
+                  "key": "startDate",
+                  "value": "2026-05-09"
+                },
+                {
+                  "key": "endDate",
+                  "value": "2026-05-09"
+                }
               ]
             }
           },
@@ -162,7 +192,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"gender\": \"Male\",\r\n  \"age\": 30,\r\n  \"identification\": \"1234567890\",\r\n  \"address\": \"123 Main Street\",\r\n  \"phone\": \"0987654321\",\r\n  \"password\": \"securePass123\"\r\n}\r\n",
+              "raw": "{\r\n  \"name\": \"Sofia Martinez\",\r\n  \"gender\": \"Female\",\r\n  \"age\": 32,\r\n  \"identification\": \"5566778899\",\r\n  \"address\": \"321 Maple Street\",\r\n  \"phone\": \"0923456789\",\r\n  \"password\": \"password1234\"\r\n}\r\n\r\n\r\n",
               "options": {
                 "raw": {
                   "language": "json"
