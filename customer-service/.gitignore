@@ -1,0 +1,12 @@
+target/
+*.log
+*.jar
+*.class
+*.iml
+/.mvn
+/.idea
+.settings
+.DS_Store
+bin/
+**/application*.properties
+**/application*.yml

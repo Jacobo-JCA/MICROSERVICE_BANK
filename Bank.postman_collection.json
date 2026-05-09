@@ -1,0 +1,295 @@
+{
+  "info": {
+    "_postman_id": "e4fe39c7-9f1d-4d80-865a-3b255e527552",
+    "name": "Bank",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "24092881"
+  },
+  "item": [
+    {
+      "name": "Account",
+      "item": [
+        {
+          "name": "CreateAccount",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"accountType\": \"CHECKING\",\r\n  \"initialBalance\": 1000.00\r\n}\r\n\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8082/v1/accounts/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "v1",
+                "accounts",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateTransaction",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"transactionType\": \"WITHDRAWAL\",\r\n  \"amount\": 750.00\r\n}\r\n\r\n\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8082/v1/transactions/3",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "v1",
+                "transactions",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateTransaction Copy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"transactionType\": \"WITHDRAWAL\",\r\n  \"amount\": 750.00\r\n}\r\n\r\n\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8082/v1/transactions/3",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "v1",
+                "transactions",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetAccounts",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"transactionType\": \"WITHDRAWAL\",\r\n  \"amount\": 750.00\r\n}\r\n\r\n\r\n"
+            },
+            "url": {
+              "raw": "localhost:8082/v1/accounts/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "v1",
+                "accounts",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetAccounts Copy",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"transactionType\": \"WITHDRAWAL\",\r\n  \"amount\": 750.00\r\n}\r\n\r\n\r\n"
+            },
+            "url": {
+              "raw": "localhost:8082/v1/accounts/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "v1",
+                "accounts",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Customer",
+      "item": [
+        {
+          "name": "CreateCustomer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"gender\": \"Male\",\r\n  \"age\": 30,\r\n  \"identification\": \"1234567890\",\r\n  \"address\": \"123 Main Street\",\r\n  \"phone\": \"0987654321\",\r\n  \"password\": \"securePass123\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8081/v1/customers",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "v1",
+                "customers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetCustomerId",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/v1/customers",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "customers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "localhost:8080/v1/customers/1",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Juan Andrade\",\r\n  \"gender\": \"Male\",\r\n  \"age\": 28,\r\n  \"identification\": \"1234567891\",\r\n  \"address\": \"Av. Amazonas 321, Quito\",\r\n  \"phone\": \"0998765431\",\r\n  \"clientId\": \"CUST0001\",\r\n  \"password\": \"securePass321\",\r\n  \"state\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/v1/customers/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "customers",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "localhost:8080/v1/customers/1",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Juan Andrade\",\r\n  \"gender\": \"Male\",\r\n  \"age\": 40,\r\n  \"identification\": \"1234567891\",\r\n  \"address\": \"Av. Amazonas 321, Quito\",\r\n  \"phone\": \"0998765431\",\r\n  \"clientId\": \"CUST0001\",\r\n  \"password\": \"securePass321\",\r\n  \"state\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/v1/customers/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "customers",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "localhost:8080/v1/customers/1",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/v1/customers/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "customers",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
